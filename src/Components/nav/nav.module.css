@@ -1,0 +1,51 @@
+nav{
+    z-index: 101;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: #181A1B;
+}
+nav .container{
+    width:80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.philosopher{
+    font-family: "Philosopher", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .philosopherbold {
+    font-family: "Philosopher", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+    flex-grow: 5;
+    
+
+  }
+  nav .logo span{
+    color:teal;
+  }
+nav li,nav .cart{transition: all .5s;}
+  nav li:hover ,nav .cart:hover{
+    color:teal;
+  }
+  nav .cart button{
+   background-color: transparent;
+   border: none; 
+   color: #fff;
+  }
+  

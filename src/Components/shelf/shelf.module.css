@@ -1,0 +1,67 @@
+.shelf
+{
+    display: flex;
+    width: 100%;
+    padding-top: 100px;
+    background-image:linear-gradient(#181a1bc8 100% 100%) , url("../../media/pexels-pixabay-256559.jpg");
+    background-position: center center;
+    background-size:  cover;
+    color:white
+}
+.shelf .filters
+{
+    width:30%;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    column-gap: 20px;
+}
+.shelf .books
+{
+    width:70%;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 40px;
+    justify-content: space-between;
+    row-gap: 40px;
+}
+.shelf .books h1{
+    width: 100%;
+    text-align: center;
+}
+.shelf .filters .searchBooks
+{
+    width: 100%;
+    border-radius : 3rem;
+    margin-block:10px;
+}
+.shelf label
+{
+    margin-block:20px;
+}
+.shelf select{
+    width:50%;
+    background-color: transparent;
+    border: solid 1px teal;
+    padding:20px;
+    border-radius: 2px;
+
+}
+.shelf select option
+{
+    background-color: transparent;
+}
+.shelf button{
+    padding: 15px 5px;
+    background-color: #2F4858;
+    border-radius:3rem;
+    border:none ;
+    transition: all .5s;
+}
+.shelf button:hover{
+    background-color: teal;
+}
+.shelf .soc{
+    background-color: transparent;
+}

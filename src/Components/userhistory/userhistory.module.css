@@ -1,0 +1,53 @@
+.return
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    border-bottom:1px solid black ;
+}
+.return p{
+    color: black;
+
+}
+.history
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+}
+.history button{
+    background-color: teal;
+    color: white;
+    border-radius: 5px  ;
+    border: none;
+    padding: 10px 10px
+}
+.history .handlereturn
+{
+    position: absolute;
+    padding: 40px;
+    width: 50%;
+    height: 50%;
+    top: 25%;
+    left: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    row-gap: 50px;
+    flex-direction: column;
+    color: white;
+    background-color: rgb(0, 52, 52);
+}
+.philosopher{
+    font-family: "Philosopher", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .philosopherbold {
+    font-family: "Philosopher", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }

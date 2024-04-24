@@ -1,0 +1,59 @@
+footer{
+    background-color: #2F4858;
+
+}
+footer .container
+{
+    width: 80%;
+    margin:  auto;
+    padding: 40px 20px;
+    
+    
+}
+footer .bookInfo h3, p{
+    padding: 10px 0px;
+    color: #fff;
+}
+footer .needHelp h3,
+p {
+    padding: 10px 0px;
+    color: #fff;
+}
+footer .content {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #fff;
+    padding: 10px;
+    
+}
+.container .book{
+    padding: 10px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.container .book a {
+    transition: .5s;
+}
+
+.container .book a:hover{
+    color:#3d88b7;
+}
+
+  .philosopher{
+  font-family: "Philosopher", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.philosopherbold {
+  font-family: "Philosopher", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+
+
+
+
+
