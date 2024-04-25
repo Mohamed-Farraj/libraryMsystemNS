@@ -15,7 +15,7 @@ function Login() {
   const [errormsg, setErrormsg] = useState("");
   const [re, setre] = useState();
   const [form, setForm] = useState({
-    userName: "",
+    username: "",
     password: "",
   });
   let  navigate = useNavigate();
@@ -26,7 +26,7 @@ function Login() {
   useEffect(()=>{localStorage.setItem('name', "");localStorage.setItem('id',null);},[]);
 
   async function loginsubmit(values) {
-    const apiurl = "http://localhost:8080/login";
+    const apiurl = "http://localhost:8081/login";
     console.log("this values",values);
     await axios
       .post(apiurl, values)
@@ -34,6 +34,7 @@ function Login() {
         setName(res.data.userID);
         localStorage.setItem('id', res.data.userID);
         localStorage.setItem('name', res.data.username);
+        sessionStorage.setItem('token',res.data.token);
         console.log(res, name);
         setResult(res);
         setSuccess(true);
@@ -45,14 +46,14 @@ function Login() {
       })
       .catch((err) => {
         console.error("Registration failed:", err.response.data);
-        setErrormsg(err.response.data);
+        setErrormsg("somthing  went wrong!");
         setError(true);
         setSuccess(false);
       });
   }
 
   let initial = {
-    userName: "",
+    username: "",
     password: "",
   };
 
@@ -68,11 +69,11 @@ function Login() {
   //   setForm({ ...form, [e.target.name]: e.target.value });
   // };
 
-  if (error === false && result.data.userType === "normal") {
+  if (error === false && result.data.role === "USER") {
     navigate(`/home/${name}`)
     // window.location.href = "/home/" + name;
     // <Link to={"/home/" + name}></Link>
-  } else if (error === false && result.data.userType === "admin") {
+  } else if (error === false && result.data.role === "ADMIN") {
     console.log("here is form", form);
     navigate(`/liberarian/${name}`)
 
@@ -95,7 +96,7 @@ function Login() {
         >
           <input
             type="text"
-            name="userName"
+            name="username"
             required
             // value={form.userName}
             className={`${log.input}`}
