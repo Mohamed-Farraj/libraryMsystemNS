@@ -19,6 +19,8 @@ const Card = (props) => {
   const [success, setSuccess] = useState(false);
   const [errormsg, setErrormsg] = useState("");
   const [form, setForm] = useState(props.obj);
+  const token = sessionStorage.getItem('token');
+
 
   const handleUpdateBook = (e) => {
     // e.preventDefault();
@@ -50,9 +52,9 @@ const Card = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (updateBookActive) {
-      const apiurl = "http://localhost:8080/updateBook/" + props.obj.bookID;
+      const apiurl = "http://localhost:8081/admin_only/updateBook/" + props.obj.bookID;
       axios
-        .put(apiurl, form)
+        .put(apiurl, form,{headers:{Authorization: `Bearer ${token}`}})
         .then((res) => {
           console.log(res);
           // setName(res.status);
@@ -62,14 +64,14 @@ const Card = (props) => {
         })
         .catch((err) => {
           console.error("Updating failed:", err.response);
-          setErrormsg(err.response);
+          setErrormsg(err.response.data.message);
           setError(true);
           setSuccess(false);
         });
     } else if (deleteBookActive) {
-      const apiurl = "http://localhost:8080/deleteBook/" + props.obj.bookID;
+      const apiurl = "http://localhost:8081/admin_only/deleteBook/" + props.obj.bookID;
       axios
-        .delete(apiurl)
+        .delete(apiurl,{headers:{Authorization: `Bearer ${token}`}})
         .then((res) => {
           console.log(res);
           setName(res.status);
@@ -84,14 +86,15 @@ const Card = (props) => {
           setSuccess(false);
         });
     } else if (borrowBookActive) {
-      const apiurl = `http://localhost:8080/borrow-book?userId=${props.usid}&bookId=${props.obj.bookID}`;
       const requestData = {
-        bookId: props.obj.bookID,
         userId: parseInt(props.usid),
+        bookId: props.obj.bookID,
       };
       console.log("here is request data for borrow:", requestData);
+      const apiurl = `http://localhost:8081/user_only/borrow-book?userId=${requestData.userId}&bookId=${props.obj.bookID}`;
+      console.log('token:',token);
       axios
-        .post(apiurl)
+        .post(apiurl,null,{headers:{Authorization:`Bearer ${token}`}})
         .then((res) => {
           console.log(res);
           // setName(res.status);
@@ -101,7 +104,7 @@ const Card = (props) => {
         })
         .catch((err) => {
           console.error("faild borrow book:", err);
-          setErrormsg(err.response.data);
+          setErrormsg(err.message);
           setError(true);
           setSuccess(false);
         });

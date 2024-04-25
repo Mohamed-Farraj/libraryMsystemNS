@@ -62,7 +62,7 @@ const handleSubmit = (e) => {
 //         });
 //   }
 
-      const apiurl ="http://localhost:8080/deleteUser";
+      const apiurl ="http://localhost:8081/admin_only/deleteUser";
       axios.delete(apiurl , {params:{id:props.obj.userID}})
         .then(res => {
           console.log(res);

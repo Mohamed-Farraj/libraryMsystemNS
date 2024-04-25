@@ -15,7 +15,7 @@ const Shelf = () => {
   let id =useParams();
 
   const getAllBooks = () => {
-    const apiurl = "http://localhost:8080/getAllBooks";
+    const apiurl = "http://localhost:8081/getAllBooks";
     axios
       .get(apiurl)
       .then((res) => {

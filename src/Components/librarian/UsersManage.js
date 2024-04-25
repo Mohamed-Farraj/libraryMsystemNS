@@ -13,7 +13,7 @@ const UsersManage = () => {
   const [x, setX] = useState([]);
 
   const getAllUsers = () => {
-    const apiurl = "http://localhost:8080/getAllUsers";
+    const apiurl = "http://localhost:8081/getAllUsers";
     axios
       .get(apiurl)
       .then((res) => {

@@ -29,14 +29,14 @@ const Liberarian = () => {
             </div>
           </Link>
         </div>
-        <div className={styles.manage}>
+        {/* <div className={styles.manage}>
           <img src={users} alt="users manage" />
           <Link to={"usermanager"}>
             <div className={styles.layer}>
               <h3>Manage Users</h3>
             </div>
           </Link>
-        </div>
+        </div> */}
       </div>
       <Outlet />
     </>

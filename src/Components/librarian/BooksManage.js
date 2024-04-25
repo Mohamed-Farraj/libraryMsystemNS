@@ -29,7 +29,7 @@ const BooksManage = () => {
   const [x, setX] = useState([]);
 
   const getAllBooks = () => {
-    const apiurl = "http://localhost:8080/getAllBooks";
+    const apiurl = "http://localhost:8081/getAllBooks";
     axios
       .get(apiurl)
       .then((res) => {
@@ -49,9 +49,11 @@ const BooksManage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const apiurl = "http://localhost:8080/addBook";
+    const apiurl = "http://localhost:8081/admin_only/addBook";
+    const token =  sessionStorage.getItem('token');
+    console.log(token);
     axios
-      .post(apiurl, form)
+      .post(apiurl, form, {headers:{Authorization:`Bearer ${token}`,'Content-Type': 'application/json'}})
       .then((res) => {
         console.log(res);
         setName(res.status);
@@ -99,6 +101,8 @@ return uniqueFilteredBooks.reverse().map((book) => (
 
 
     } else {
+      console.log("book title:",x.title);
+      console.log("q title:",q);
       const filteredBookstitle = x.filter((book) =>
         book.title.toLowerCase().includes(q.toLowerCase())
       );
@@ -235,7 +239,7 @@ return uniqueFilteredBooks.reverse().map((book) => (
             Submit
           </button>
           {success && (
-            <div className={styles.formtitle} style={{ color: "#008080" }}>
+            <div className={styles.formtitle} style={{ color: "#008081" }}>
               <h3>Book Added Successfully</h3>
             </div>
           )}

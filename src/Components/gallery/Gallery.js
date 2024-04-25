@@ -12,7 +12,7 @@ const [errormsg, setErrormsg] = useState("");
     const [x, setX] = useState([]);
 
     const getAllBooks = () => {
-        const apiurl = "http://localhost:8080/getAllBooks";
+        const apiurl = "http://localhost:8081/getAllBooks";
         axios
           .get(apiurl)
           .then((res) => {
