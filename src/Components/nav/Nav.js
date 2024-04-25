@@ -26,6 +26,7 @@ const Nav = (props) => {
            <Link to={"/home/"+localStorage.getItem('id')}><li>Home</li></Link> 
            <Link to={"/bookshelf/"+localStorage.getItem('id')}><li>Book Shelf</li></Link>
            <Link to={"/history/"+localStorage.getItem('id')}><li>History</li></Link>
+          {localStorage.getItem('name') === "" && <Link to={"/login"}><li>Login</li></Link>}  
            <li><FontAwesomeIcon icon={faUser} /> {localStorage.getItem('name')}</li> 
           </ul>
           <div className={`${styles.cart}`}>

@@ -40,7 +40,6 @@ const Card = (props) => {
   };
 
   const handleBorrowBook = (e) => {
-
     console.log("Borrowing book:", form);
     setUpdateBookActive(false);
     setBorrowBookActive(true);
@@ -84,14 +83,13 @@ const Card = (props) => {
           setError(true);
           setSuccess(false);
         });
-    }
-    else if (borrowBookActive){
-      const apiurl = `http://localhost:8080/borrow-book?userId=${props.usid}&bookId=${props.obj.bookID}` ;
+    } else if (borrowBookActive) {
+      const apiurl = `http://localhost:8080/borrow-book?userId=${props.usid}&bookId=${props.obj.bookID}`;
       const requestData = {
         bookId: props.obj.bookID,
-        userId: parseInt(props.usid)
+        userId: parseInt(props.usid),
       };
-      console.log("here is request data for borrow:",requestData);
+      console.log("here is request data for borrow:", requestData);
       axios
         .post(apiurl)
         .then((res) => {
@@ -257,8 +255,6 @@ const Card = (props) => {
         </form>
       </div>
 
-
-
       <div className={`${styles.adminform} ${styles[hideB]}`}>
         <button
           className={styles.icon}
@@ -272,7 +268,11 @@ const Card = (props) => {
           <FontAwesomeIcon icon={faCircleXmark} />
         </button>
         <div className={styles.formtitle}>
-          <h3>Sure for this Borrow Book Request?</h3>
+          {localStorage.getItem('id') === "null" ? (
+            <h3 style={{ color: "red" }}>Please Login First!</h3>
+          ) : (
+            <h3 style={{color:"black"}}>Sure for this Borrow Book Request?</h3>
+          )}
         </div>
         <form
           className={`${styles.managebooks}`}
@@ -280,13 +280,15 @@ const Card = (props) => {
           onSubmit={handleSubmit}
         >
           <div className={styles.buttons}>
-            <button
-              className={styles.sub}
-              type="submit"
-              onClick={handleBorrowBook}
-            >
-              Yes, Borrow it!
-            </button>
+            {localStorage.getItem('id') !== "null" && (
+              <button
+                className={styles.sub}
+                type="submit"
+                onClick={handleBorrowBook}
+              >
+                Yes, Borrow it!
+              </button>
+            )}
           </div>
           {success && (
             <div className={styles.formtitle} style={{ color: "#008080" }}>
@@ -300,9 +302,6 @@ const Card = (props) => {
           )}
         </form>
       </div>
-
-
-
 
       <div className={stylescard.card}>
         <div className={stylescard.soc}>

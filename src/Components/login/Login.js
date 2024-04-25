@@ -23,6 +23,7 @@ function Login() {
 
   // const handleSubmit = (e) => {
   // e.preventDefault();
+  useEffect(()=>{localStorage.setItem('name', "");localStorage.setItem('id',null);},[]);
 
   async function loginsubmit(values) {
     const apiurl = "http://localhost:8080/login";
