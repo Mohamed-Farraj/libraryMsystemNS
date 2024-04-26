@@ -13,6 +13,8 @@ import Hero from "./Components/hero/Hero";
 import Desctop from "./Components/Desctop";
 import Shelf from "./Components/shelf/Shelf";
 import Userhistory from "./Components/userhistory/Userhistory";
+import  PrivateRoute  from "./Components/PrivateRoute";
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -20,11 +22,11 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/home",
-        element: <Desctop />,
+        element: <PrivateRoute component={Desctop}/>,
       },
       {
         path: "/",
-        element: <Login />,
+        element: <Login/>,
       },
       {
         path: "/welcome",
@@ -40,7 +42,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/liberarian",
-        element: <Liberarian />,
+        element: <PrivateRoute component={Liberarian}/>,
         children: [
           {
             path: "bookmanager",
@@ -54,11 +56,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/bookshelf",
-        element: <Shelf />,
+        element: <PrivateRoute component={Shelf}/>,
       },
       {
         path: "/history",
-        element: <Userhistory />,
+        element: <PrivateRoute component={Userhistory}/>,
       },
       {
         path: "/u",

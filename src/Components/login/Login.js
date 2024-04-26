@@ -23,7 +23,7 @@ function Login() {
 
   // const handleSubmit = (e) => {
   // e.preventDefault();
-  useEffect(()=>{localStorage.setItem('name', "");localStorage.setItem('id',null);},[]);
+  useEffect(()=>{},[]);
 
   async function loginsubmit(values) {
     const apiurl = "http://localhost:8081/login";
@@ -34,6 +34,7 @@ function Login() {
         setName(res.data.userID);
         localStorage.setItem('id', res.data.userID);
         localStorage.setItem('name', res.data.username);
+        localStorage.setItem('log', true);
         sessionStorage.setItem('token',res.data.token);
         console.log(res, name);
         setResult(res);

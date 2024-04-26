@@ -48,7 +48,7 @@ const [errormsg, setErrormsg] = useState("");
             <div className={`${styles.cards}`}>
                 {displayBooks()}
             </div>
-            <Link to={"/bookshelf/"+localStorage.getItem('id')}><button>Show All Books</button></Link>
+            <Link to={"/bookshelf"}><button>Show All Books</button></Link>
         </div>
       </div>
     </>

@@ -4,6 +4,7 @@ import "./styles/App.css";
 import Nav from "./Components/nav/Nav";
 import Foooter from "./Components/footer/Foooter";
 import { UserNameContext } from "./Components/UserNameParent";
+import  PrivateRoute  from "./Components/PrivateRoute";
 
 function App() {
   return (
