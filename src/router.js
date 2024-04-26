@@ -19,7 +19,7 @@ export const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/home/:uname",
+        path: "/home",
         element: <Desctop />,
       },
       {
@@ -39,7 +39,7 @@ export const router = createBrowserRouter([
         element: <Signup />,
       },
       {
-        path: "/liberarian/:uname",
+        path: "/liberarian",
         element: <Liberarian />,
         children: [
           {
@@ -53,11 +53,11 @@ export const router = createBrowserRouter([
         ],
       },
       {
-        path: "/bookshelf/:uname",
+        path: "/bookshelf",
         element: <Shelf />,
       },
       {
-        path: "/history/:uname",
+        path: "/history",
         element: <Userhistory />,
       },
       {

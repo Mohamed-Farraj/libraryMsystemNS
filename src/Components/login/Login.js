@@ -70,12 +70,12 @@ function Login() {
   // };
 
   if (error === false && result.data.role === "USER") {
-    navigate(`/home/${name}`)
+    navigate(`/home`)
     // window.location.href = "/home/" + name;
     // <Link to={"/home/" + name}></Link>
   } else if (error === false && result.data.role === "ADMIN") {
     console.log("here is form", form);
-    navigate(`/liberarian/${name}`)
+    navigate(`/liberarian`)
 
     // <Link to={`/liberarian/ + ${name}`}></Link>
 

@@ -20,12 +20,12 @@ const Nav = (props) => {
       <nav>
         <div className={`${styles.container}`}>
           <div className={`${styles.logo} ${styles.philosopher}`}>
-           <Link to={"/home/"+localStorage.getItem('id')}><h2>Word<span>Wise.</span></h2></Link> 
+           <Link to={"/home"}><h2>Word<span>Wise.</span></h2></Link> 
           </div>
           <ul className={`${styles.links}`}>
-           <Link to={"/home/"+localStorage.getItem('id')}><li>Home</li></Link> 
-           <Link to={"/bookshelf/"+localStorage.getItem('id')}><li>Book Shelf</li></Link>
-           <Link to={"/history/"+localStorage.getItem('id')}><li>History</li></Link>
+           <Link to={"/home"}><li>Home</li></Link> 
+           <Link to={"/bookshelf"}><li>Book Shelf</li></Link>
+           {/* <Link to={"/history"}><li>History</li></Link> */}
           {localStorage.getItem('name') === "" && <Link to={"/login"}><li>Login</li></Link>}  
            <li><FontAwesomeIcon icon={faUser} /> {localStorage.getItem('name')}</li> 
           </ul>
