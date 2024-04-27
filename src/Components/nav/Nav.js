@@ -22,6 +22,7 @@ const Nav = (props) => {
     localStorage.setItem('name', "");
     localStorage.setItem('id',null);
     localStorage.setItem('log',false);
+    sessionStorage.removeItem('token');
   }
   return (
     <>
