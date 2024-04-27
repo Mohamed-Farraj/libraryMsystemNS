@@ -151,7 +151,7 @@ const Shelf = () => {
               setSearch(e.target.value);
             }}
           />
-          <label htmlFor="select">Sort by: {localStorage.getItem('id')}</label>
+          <label htmlFor="select">Sort by:</label>
           <select
             id="select"
             value={selects}
