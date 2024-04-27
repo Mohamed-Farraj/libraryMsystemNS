@@ -65,6 +65,7 @@ const BooksManage = () => {
       .catch((err) => {
         console.error("Add failed:", err.response.data);
         setErrormsg(err.response.data);
+        err.response.status === 403 && setErrormsg("UNAUTHORISED");
         setError(true);
         setSuccess(false);
       });

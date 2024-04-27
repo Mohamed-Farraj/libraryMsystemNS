@@ -65,6 +65,7 @@ const Card = (props) => {
         .catch((err) => {
           console.error("Updating failed:", err.response);
           setErrormsg(err.response.data.message);
+          err.response.status === 403 && setErrormsg("UNAUTHORISED");
           setError(true);
           setSuccess(false);
         });
@@ -82,6 +83,7 @@ const Card = (props) => {
         .catch((err) => {
           console.error("Delete failed:", err.response.data);
           setErrormsg(err.response.data);
+          err.response.status === 403 && setErrormsg("UNAUTHORISED");
           setError(true);
           setSuccess(false);
         });
@@ -105,6 +107,7 @@ const Card = (props) => {
         .catch((err) => {
           console.error("faild borrow book:", err);
           setErrormsg(err.message);
+          err.response.status === 403 && setErrormsg("UNAUTHORISED");
           setError(true);
           setSuccess(false);
         });
