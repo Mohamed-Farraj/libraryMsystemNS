@@ -35,7 +35,7 @@ const Nav = (props) => {
            <Link to={"/bookshelf"}><li>Book Shelf</li></Link>
            {/* <Link to={"/history"}><li>History</li></Link> */}
            <li><FontAwesomeIcon icon={faUser} /> {localStorage.getItem('name')}</li> 
-          {localStorage.getItem('name') === "" ? <Link to={"/login"}><li>Login</li></Link>:<button className={`${g.button}`} onClick={handlelogout}><li><Link to={"/login"}>log out</Link></li></button>}  
+          {localStorage.getItem('name') === "" ? <Link to={"/login"}><li>Login</li></Link>:<button className={`${g.button}`} onClick={handlelogout}><li><Link to={"/login"} className={`${styles.philosopher}`}>log out</Link></li></button>}  
           </ul>
           <div className={`${styles.cart}`}>
             <span></span>
