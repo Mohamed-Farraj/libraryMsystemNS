@@ -19,7 +19,7 @@ img{
     bottom: 0;
     left: 0;
     flex-flow: row wrap;
-    column-gap: 3rem;
+    column-gap: 20px;
     row-gap: 2rem;
     justify-content: center;
     align-items: center;
@@ -27,14 +27,28 @@ img{
     height: 100vh;
     overflow: auto;
     z-index: 10;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.432), rgba(0, 57, 57, 0.527)) ,url(../../media/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.655), rgba(0, 6, 6, 0.792)) ,url(../../media/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg);
     background-size: cover;
     background-position: center center;
     padding-top:100px ;
 }
-.searchBooks{width:100%;
+.searchBooks{
+width:50%;
 height: 70px;
-border-radius: 10px;}
+margin: auto;
+border-radius: 3rem;
+}
+.searchbar
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+input{
+    padding:20px;
+}
 .adminform,.adminformD{
 
     padding:2rem;

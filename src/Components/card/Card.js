@@ -331,32 +331,28 @@ const Card = (props) => {
           <img src={props.obj.imageLink} alt="book cover" />
         </div>
         <div className={stylescard.aboutchef}>
-          <h2 className="philosopher">{props.obj.title}</h2>
-          <span>Author: {props.obj.author}</span>
+          <h1 className="philosopher">{props.obj.title}</h1>
+          <span><b>Author</b>: {props.obj.author}</span>
           <br />
           <br />
           <p>
-            <span>isbn: {props.obj.isbn}</span>
-            <br />
+            <span><b>isbn</b>: {props.obj.isbn}</span>
             <br />
             {props.usertype === "admin" && (
               <>
-                <span>rackNumber: {props.obj.rackNumber}</span>
-                <br />
+                <span><b>rackNumber</b>: {props.obj.rackNumber}</span>
                 <br />
               </>
             )}
             {props.usertype === "admin" && (
               <>
-                <span>avalibleCopies: {props.obj.availableCopies}</span>
-                <br />
+                <span><b>avalibleCopies</b>: {props.obj.availableCopies}</span>
                 <br />
               </>
             )}
             {props.usertype === "admin" && (
               <>
-                <span>totalCopies: {props.obj.totalCopies}</span>
-                <br />
+                <span><b>totalCopies</b>: {props.obj.totalCopies}</span>
                 <br />
               </>
             )}

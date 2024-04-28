@@ -164,7 +164,7 @@ const Shelf = () => {
           </select>
         </div>
         <div className={`${style.books}`}>
-          <h1>{displayBooks(search).length}{} Books Avalible</h1>
+          <h1 className={style.hh}>{displayBooks(search).length}{} Books Avalible</h1>
           {displayBooks(search)}
         </div>
       </div>

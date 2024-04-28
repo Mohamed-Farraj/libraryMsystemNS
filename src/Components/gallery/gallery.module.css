@@ -1,6 +1,7 @@
 .gallery{
  padding: 40px 20px;
  background-color: #181A1B;
+ /* background-image: linear-gradient(to top, #30d0d092 0%, #330867aa 100%); */
 }
 .gallery .container{
     display: flex;
@@ -11,22 +12,39 @@
 }
 .gallery .cards{
     padding: 40px 20px;
-    width: 100%;
+    width: fit-content;
     height: 62vh;
     row-gap: 100px;
+    column-gap: 20px;
     display: flex;
-    overflow: hidden;
-    flex-flow: row wrap;
+    overflow-x: auto;
+    flex-flow: row nowrap;
     justify-content: space-between;
-    overflow: hidden;
+    overflow-y: hidden;
     margin-bottom: 40px;
+    position: relative;
+    animation: scroll 60s linear infinite;
+}
+@keyframes scroll {
+  0%
+  {
+    left: 0;
+  }
+  50%
+  {
+    left: -52%;
+  }
+  100%
+  {
+    left: 0;
+  }
 }
 .gallery h4{
  color:#2F4858;
 }
 .gallery h2{
     color:teal;
-    font-size: 50px;
+    font-size: 60px;
 }
 .philosopher{
     font-family: "Philosopher", sans-serif;
@@ -50,3 +68,11 @@
   }
 
   .gallery button:hover{background-color: teal;}
+  .gallery .cards h1,.gallery .cards span{
+    color: white;
+  }
+  .scroller{
+    position: relative;
+    width: 100%;
+    overflow: none;
+  }

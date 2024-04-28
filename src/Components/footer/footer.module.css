@@ -1,5 +1,6 @@
 footer{
-    background-color: #2F4858;
+    /* background-color: #2F4858; */
+    background-image: linear-gradient(to right, #434343f4 0%rgba(0, 0, 0, 0.66)ck 100%);
 
 }
 footer .container

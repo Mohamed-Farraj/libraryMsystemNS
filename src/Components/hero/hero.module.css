@@ -11,15 +11,15 @@
 
 }
 .hero .container{
-  width: 50%;
+  width: 60%;
   text-align: center;
 }
 .hero h1{
-  font-size: 84px;
+  font-size: 96px;
   line-height: 100px;
 }
 .hero p{
-  font-size: 30px;
+  font-size: 25px;
   line-height: 50px;
   font-weight: 400;
 }

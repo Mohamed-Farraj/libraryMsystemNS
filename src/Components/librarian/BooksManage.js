@@ -157,7 +157,7 @@ return uniqueFilteredBooks.reverse().map((book) => (
     <button className={`${styles.act} ${styles.add}`} onClick={handleAddBook}>
       Want to Add New book?
     </button>
-
+    <div className={styles.searchbar}>
     <input
       className={styles.searchBooks}
       type="text"
@@ -166,7 +166,7 @@ return uniqueFilteredBooks.reverse().map((book) => (
         setSearch(e.target.value);
       }}
     />
-
+</div>
     {displayBooks(search)}
 
     <div className={`${styles.adminform} ${styles[hide]}`}>
