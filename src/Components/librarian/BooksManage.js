@@ -5,7 +5,7 @@ import styles from "./booksmanage.module.css";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const BooksManage = () => {
   const [name, setName] = useState("");
@@ -17,6 +17,7 @@ const BooksManage = () => {
   const [success, setSuccess] = useState(false);
   const [errormsg, setErrormsg] = useState("");
   const [search, setSearch] = useState("");
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     title: "",
     author: "",
@@ -66,6 +67,7 @@ const BooksManage = () => {
         console.error("Add failed:", err.response.data);
         setErrormsg(err.response.data);
         (err.response.status === 403 || err.response.status === 401) && setErrormsg("UNAUTHORISED");
+        // (err.response.status === 403 || err.response.status === 401) && navigate( "/login" ,{replace: true});
         setError(true);
         setSuccess(false);
       });
